@@ -5,7 +5,7 @@ require 'open-uri'
 require_relative "piano_music_schools/version" 
 require_relative 'piano_music_schools/cli'
 require_relative 'piano_music_schools/pianists'    
-#require './lib/piano/schools'
+require_relative 'piano_music_schools/scraper'  
 module PianoMusicSchools
   class Error < StandardError; end
 
