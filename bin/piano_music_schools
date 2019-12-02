@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'open-uri'
-require './lib/piano_music_schools'   
+
+require_relative '../lib/piano_music_schools'   
 
 PianoMusicSchools::CLI.new.call    
