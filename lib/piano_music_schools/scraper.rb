@@ -15,7 +15,8 @@ class PianoMusicSchools::Scraper
     @list_piano_site_description.each do |rep|
       name=rep.css('a').text.strip
       school_sites=rep.css("h3").text.strip  
-      school=self.new(name, school_sites)
+      school=self.new()
+      #school=self.new(name, school_sites) 
       @@school_list << school  
     end  
     PianoMusicSchool::Pianists.new(name, school_sites)
