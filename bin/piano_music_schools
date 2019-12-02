@@ -2,4 +2,4 @@
 require 'open-uri'
 require './lib/piano_music_schools'   
 
-Piano::CLI.new.call    
+PianoMusicSchools::CLI.new.call    

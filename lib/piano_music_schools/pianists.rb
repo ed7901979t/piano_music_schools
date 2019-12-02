@@ -1,4 +1,4 @@
-class Piano::Pianists 
+class PianoMusicSchool::Pianists 
   
   attr_accessor :name, :school_sites 
   @@school_list = []
@@ -11,7 +11,7 @@ class Piano::Pianists
   def self.all 
     @@school_list  
   end
-  Piano::Schools.new(name, school_sites)
+  #PianoMusicSchool::Schools.new(name, school_sites)
 
 def self.get_piano_sites        
 # composers = []                    
@@ -113,12 +113,12 @@ def self.get_piano_sites
     puts "#{@@school_list[index].school_sites}"   
   end
   def self.final_list_display_school
-    Piano::Pianists.get_piano_sites 
-    Piano::Pianists.display_school  
+    PianoMusicSchool::Pianists.get_piano_sites 
+    PianoMusicSchool::Pianists.display_school  
     #Piano::Pianists.display_list 
   end
   def self.final_display_list(input)
-    puts Piano::Pianists.get_piano_paragraphs1(input.to_i)  
+    puts PianoMusicSchool::Pianists.get_piano_paragraphs1(input.to_i)  
     #Piano::Pianists.display_school
     #Piano::Pianists.display_list(input)      
      

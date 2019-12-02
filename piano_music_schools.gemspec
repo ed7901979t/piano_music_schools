@@ -1,3 +1,5 @@
+spec.add_development_dependency "pry"
+spec.add_development_dependency "httparty"
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
