@@ -1,4 +1,4 @@
-class PianoMusicSchool::Pianists 
+class PianoMusicSchools::Pianists 
   
   attr_accessor :name, :school_sites 
   @@school_list = []
@@ -113,8 +113,8 @@ def self.get_piano_sites
     puts "#{@@school_list[index].school_sites}"   
   end
   def self.final_list_display_school
-    PianoMusicSchool::Pianists.get_piano_sites 
-    PianoMusicSchool::Pianists.display_school  
+    PianoMusicSchools::Pianists.get_piano_sites 
+    PianoMusicSchools::Pianists.display_school  
     #Piano::Pianists.display_list 
   end
   def self.final_display_list(input)
