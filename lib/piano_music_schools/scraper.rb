@@ -15,11 +15,10 @@ class PianoMusicSchools::Scraper
     @list_piano_site_description.each do |rep|
       name=rep.css('a').text.strip
       school_sites=rep.css("h3").text.strip  
-      school=self.new()
-      #school=self.new(name, school_sites) 
+      school=self.new(name, school_sites) 
       @@school_list << school  
     end  
-    PianoMusicSchool::Pianists.new(name, school_sites)
+    PianoMusicSchools::Pianists.new(name, school_sites)
   end
   #**************************1st approach
   def self.get_piano_paragraphs(input)
@@ -92,7 +91,9 @@ class PianoMusicSchools::Scraper
     
       #to display school sites paragraphs collectin array
       def self.display_school 
+    
     @@school_list.each.with_index(1) do |school, i|
+    
       puts "   #{i}.   #{school.name}" 
     end
       end

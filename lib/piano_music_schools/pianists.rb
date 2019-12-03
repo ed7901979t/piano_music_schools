@@ -3,7 +3,7 @@ class PianoMusicSchools::Pianists
   attr_accessor :name, :school_sites 
   @@school_list = []
   
-  def initialize()
+  def initialize(name=nil, school_sites=nil)
     @name=name
     @school_sites=school_sites 
   end
