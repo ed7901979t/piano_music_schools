@@ -7,18 +7,14 @@ class PianoMusicSchools::Scraper
     Nokogiri::HTML.parse(open('http://gnoted.com/9-websites-to-play-piano-online-for-free/')).title.strip   
     @data = self.data_scraper(base_url) #new
     @list_piano_site_description=@data.css("h3") 
-    
-    
     @list_piano_site_description.each do |rep|
       name=rep.css('a').text.strip
       school_sites=rep.css("h3").text.strip  
-      PianoMusicSchools::Pianists.new(name, school_sites)
-      
-       
-      @@school_list << PianoMusicSchools::Pianists.new(name, school_sites)
+    @@school_list << PianoMusicSchools::Pianists.new(name, school_sites)
     end  
-    
   end
+  
+  
   #**************************1st approach
   def self.get_piano_paragraphs(input)
      
