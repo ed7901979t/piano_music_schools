@@ -15,51 +15,25 @@ class PianoMusicSchools::Scraper
   end
   
   
-  #**************************1st approach
-  def self.get_piano_paragraphs(input)
-     
-    #@list_piano_paragraph_description=@data.css('p[style=text-align left;]')
-    base_url = 'http://gnoted.com/9-websites-to-play-piano-online-for-free/'
-    @data = self.data_scraper(base_url)   
-    @list_piano_paragraph_description=@data.css('p')
-    @list_piano_paragraph_description.each do |rep|
-      #'p[style=text-align left;]'
-      school_sites=rep.css('p').text.strip   
-      school=self.new(name, school_sites) 
-      @@school_list << school_sites    
-    end 
-  end
-        
-  #****************************2nd approach
   def self.get_piano_paragraphs1(input)
-    base_url = 'http://gnoted.com/9-websites-to-play-piano-online-for-free/'
-    
-    @data = self.data_scraper(base_url) 
-     
-    if (input > 1) && (input < 5) 
-    #if ((input == 2) || (input == 3) || (input == 4))
-           
-      paragraph=@data.css("p[style='text-align: left;']")[input-2]  
+  base_url = 'http://gnoted.com/9-websites-to-play-piano-online-for-free/'
+  @data = self.data_scraper(base_url) 
+  if (input > 1) && (input < 5) 
+     #if ((input == 2) || (input == 3) || (input == 4))
+        paragraph=@data.css("p[style='text-align: left;']")[input-2]  
        
-    #elsif (input > 4) && (input < 10) 
-    elsif (input==5)
+     #elsif (input > 4) && (input < 10) 
+  elsif (input==5)
     paragraph=@data.css("body > section > div > p:nth-child(20)")#[input-2] 
     
-    elsif (input==6)# || (input==6) || (input==7)|| (input==8) || (input==9))
-    
-      paragraph=@data.css("body > section > div > p:nth-child(23)")#[input-2] 
-      
-      elsif (input==7)# || (input==6) || (input==7)|| (input==8) || (input==9))
-    
-      paragraph=@data.css("body > section > div > p:nth-child(26)")#[input-2] 
-      
-      elsif (input==8)# || (input==6) || (input==7)|| (input==8) || (input==9))  
-    
-      paragraph=@data.css("body > section > div > p:nth-child(29)")#[input-2]    
-      
-      elsif (input==9)# || (input==6) || (input==7)||   (input==8) || (input==9)) 
-    
-      paragraph=@data.css("body > section > div > p:nth-child(32)")#[input-2]       
+  elsif (input==6)# || (input==6) || (input==7)|| (input==8) || (input==9))
+    paragraph=@data.css("body > section > div > p:nth-child(23)")#[input-2] 
+  elsif (input==7)# || (input==6) || (input==7)|| (input==8) || (input==9))
+    paragraph=@data.css("body > section > div > p:nth-child(26)")#[input-2] 
+  elsif (input==8)# || (input==6) || (input==7)|| (input==8) || (input==9))  
+    paragraph=@data.css("body > section > div > p:nth-child(29)")#[input-2]
+  elsif (input==9)# || (input==6) || (input==7)||   (input==8) || (input==9)) 
+    paragraph=@data.css("body > section > div > p:nth-child(32)")#[input-2]       
       
       #
       #body > section > div > p:nth-child(20)
@@ -112,15 +86,7 @@ class PianoMusicSchools::Scraper
       
     
     
-    #***********************************************
-    #list_composer_description=data.css('p[style="text-align: left;"]')
-		
-    #list_composer_description.each do |data|
-      # Pianists.new(title, description)
-
-     #puts data 
-#end
-#end
+ 
 def self.data_scraper(url)
     Nokogiri::HTML(open(url))  
 end
