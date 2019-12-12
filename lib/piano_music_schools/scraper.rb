@@ -70,7 +70,7 @@ class PianoMusicSchools::Scraper
       #to display school lists collectin array
       def self.display_list(input)
     index = input.to_i - 1
-    puts "#{@@school_list[index].school_sites}"   
+    puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
   end
   def self.final_list_display_school
     PianoMusicSchools::Scraper.get_piano_sites 
@@ -91,7 +91,7 @@ class PianoMusicSchools::Scraper
 def self.data_scraper(url)
     Nokogiri::HTML(open(url))  
 end
-@@school_list = []
+#@@school_list = []
 #1 user sees the list 
 #2 selects a site from the list 
 #3 description and the link for the site
