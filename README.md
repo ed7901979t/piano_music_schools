@@ -2,8 +2,8 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/piano_music_schools`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
-
+This project lets a use select piano music schools from the list provided in order 
+to get a description for each school.
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+ruby bin/piano_music_schools command then select an option from the list to get a detailed 
+description. Use an an up arrow to return to the main command ruby bin/piano_music_schools 
+press enter to get to the list. 
 
 ## Development
 
