@@ -2,7 +2,7 @@ class PianoMusicSchools::CLI
    
     
    def call 
-      
+     puts "Welcome to the Piano Music Schools" 
      puts "  "
      piano   
      #goodbye
@@ -10,11 +10,16 @@ class PianoMusicSchools::CLI
     
    def piano 
      puts "Here the piano school list"
+      
      PianoMusicSchools::Scraper.final_list_display_school 
-     input = "nil" 
+     puts "Select school you would like to read more about. Or type exit"
+    input = ""
+    while input != "exit"
+      input = gets.strip
+     #input = "nil" 
      puts "Please enter your input"
      puts "   "
-     input=gets.strip.downcase
+     #input=gets.strip.downcase
      case input
        when "1"
          puts "Virtual Keyboard School"  
@@ -70,6 +75,11 @@ class PianoMusicSchools::CLI
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
+         else
+            puts "Not sure what you mean! Please select the episode you'd like to read more about, list, or exit."
+            puts ""
+         end
+         puts "Please enter your input"
          
       
          
@@ -81,7 +91,7 @@ class PianoMusicSchools::CLI
     #end
     #testing
     def goodbye
-      puts "Goodbye"
+      puts "Goodbye. Thank you for using program."
     end
    end   
  #end
