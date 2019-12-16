@@ -79,7 +79,7 @@ class PianoMusicSchools::CLI
          #piano
          puts "                                         "
          else
-            puts "Not sure what you mean! Please select the episode you'd like to read more about, list, or exit."
+            puts "Not sure what you mean! Please select the description of music school you'd like to read more about, or type exit."
             puts ""
          end
          puts "Please enter your input"
