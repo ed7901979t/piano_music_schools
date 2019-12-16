@@ -19,7 +19,7 @@ class PianoMusicSchools::CLI
      #input = "nil" 
      puts "Please enter your input"
      puts "   "
-     #input=gets.strip.downcase
+     #input=gets.strip.downcase 
      case input
        when "1"
          puts "Virtual Keyboard School"  

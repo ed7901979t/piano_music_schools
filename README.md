@@ -23,8 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ruby bin/piano_music_schools command then select an option from the list to get a detailed 
-description. Use an an up arrow to return to the main command ruby bin/piano_music_schools 
-press enter to get to the list. 
+description. The application will continue to ask a user for the input, including any applicable validation tests.
 
 ## Development
 
