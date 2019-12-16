@@ -2,6 +2,7 @@ class PianoMusicSchools::CLI
    
     
    def call 
+     
      puts "Welcome to the Piano Music Schools" 
      puts "  "
      piano   
@@ -11,7 +12,7 @@ class PianoMusicSchools::CLI
    def piano 
      puts "Here the piano school list"
       
-     PianoMusicSchools::Scraper.final_list_display_school 
+     PianoMusicSchools::CLI.final_list_display_school 
      puts "Select school you would like to read more about. Or type exit"
     input = ""
     while input != "exit"
@@ -20,9 +21,11 @@ class PianoMusicSchools::CLI
      puts "Please enter your input"
      puts "   "
      #input=gets.strip.downcase 
+      
      case input
        when "1"
-         puts "Virtual Keyboard School"  
+         #puts "Virtual Keyboard School"  
+         puts PianoMusicSchools::Pianists.all[0].name 
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
@@ -85,6 +88,22 @@ class PianoMusicSchools::CLI
          
         end 
       end
+      
+       def self.display_school 
+    
+    PianoMusicSchools::Pianists.all.each.with_index(1) do |school, i|
+    
+      puts "   #{i}.   #{school.name}" 
+    end
+      end
+      
+      def self.final_list_display_school
+    PianoMusicSchools::Scraper.get_piano_sites 
+    PianoMusicSchools::CLI.display_school  
+    #Piano::Pianists.display_list 
+  end
+      
+      
      
          
      #@piano_sites=Piano::Pianists

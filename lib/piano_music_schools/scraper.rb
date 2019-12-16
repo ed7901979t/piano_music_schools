@@ -60,23 +60,23 @@ class PianoMusicSchools::Scraper
   
     
       #to display school sites paragraphs collectin array
-      def self.display_school 
+      #def self.display_school 
     
-    PianoMusicSchools::Pianists.all.each.with_index(1) do |school, i|
+  #  PianoMusicSchools::Pianists.all.each.with_index(1) do |school, i|
     
-      puts "   #{i}.   #{school.name}" 
-    end
-      end
+   #   puts "   #{i}.   #{school.name}" 
+  #  end
+   #   end
       #to display school lists collectin array
       def self.display_list(input)
     index = input.to_i - 1
     puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
   end
-  def self.final_list_display_school
-    PianoMusicSchools::Scraper.get_piano_sites 
-    PianoMusicSchools::Scraper.display_school  
+ # def self.final_list_display_school
+ #    PianoMusicSchools::Scraper.get_piano_sites 
+ #    PianoMusicSchools::Scraper.display_school  
     #Piano::Pianists.display_list 
-  end
+ # end
   def self.final_display_list(input)
     puts PianoMusicSchools::Scraper.get_piano_paragraphs1(input.to_i)  
     #Piano::Pianists.display_school
