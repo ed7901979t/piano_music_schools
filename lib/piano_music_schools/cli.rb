@@ -1,14 +1,35 @@
 class PianoMusicSchools::CLI     
    
-    
+  #testing start   
+  attr_accessor :schools 
+  #testing end
+  
    def call 
      
      puts "Welcome to the Piano Music Schools" 
      puts "  "
+     #testing start
+     list
+     #testing end
      piano   
      #goodbye
    end
-    
+   #testing start 
+   def list
+       
+    puts ""
+    #@schools = PianoMusicSchools::Scraper.get_piano_sites
+    PianoMusicSchools::Scraper.get_piano_sites.each_with_index do |schoool_sites, input|
+      puts "#{input + 1}. #{schoool_sites.name}"
+    end
+    puts ""
+   
+   
+   
+   
+   
+   end
+   #testing end
    def piano 
      puts "Here the piano school list"
       
@@ -27,53 +48,85 @@ class PianoMusicSchools::CLI
          #puts "Virtual Keyboard School"  
          puts PianoMusicSchools::Pianists.all[0].name 
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         #PianoMusicSchools::Scraper.final_display_list(input)
          #piano
-         puts "-----------------------------------------"
+         #puts "-----------------------------------------"
        when "2"
          puts "PLay the Piano Online"
+         #testing
+         puts PianoMusicSchools::Pianists.all[1].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "3"
          puts "Virtual Keyboard School"
+         #testing
+         puts PianoMusicSchools::Pianists.all[2].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "4"
          puts "Piano Synthesizer"
+         #testing
+         puts PianoMusicSchools::Pianists.all[3].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "5"
          puts "Play piano.org"
+         #testing
+         puts PianoMusicSchools::Pianists.all[4].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "6"
          puts "Music games, piano, guitar"
+         #testing
+         puts PianoMusicSchools::Pianists.all[5].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "7"
          puts "Virtual IP piano"
+         #testing
+         puts PianoMusicSchools::Pianists.all[6].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "8"
          puts "2D Play"
+         puts PianoMusicSchools::Pianists.all[7].name 
+         #testing
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
          puts "                                         "
        when "9"
          puts "VPK"
+         #testing
+         puts PianoMusicSchools::Pianists.all[8].name 
+         puts "-----------------------------------------"
+         #testing
          puts "-----------------------------------------"
          PianoMusicSchools::Scraper.final_display_list(input)
          #piano
