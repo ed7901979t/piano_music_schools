@@ -19,7 +19,7 @@ class PianoMusicSchools::CLI
        
     puts ""
     #@schools = PianoMusicSchools::Scraper.get_piano_sites
-    PianoMusicSchools::Scraper.get_piano_sites.each_with_index do |schoool_sites, input|
+    PianoMusicSchools::Pianists.all.each_with_index do |schoool_sites, input|
       puts "#{input + 1}. #{schoool_sites.name}"
     end
     puts ""
