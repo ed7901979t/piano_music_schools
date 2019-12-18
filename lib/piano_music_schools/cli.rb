@@ -8,27 +8,25 @@ class PianoMusicSchools::CLI
      
      puts "Welcome to the Piano Music Schools" 
      puts "  "
-     #testing start
-     list
-     #testing end
+      
      piano   
      #goodbye
    end
    #testing start 
-   def list
+   #def list
        
-    puts ""
+    #puts ""
     #@schools = PianoMusicSchools::Scraper.get_piano_sites
-    PianoMusicSchools::Pianists.all.each_with_index do |schoool_sites, input|
-      puts "#{input + 1}. #{schoool_sites.name}"
-    end
-    puts ""
+    #PianoMusicSchools::Pianists.all.each_with_index do |schoool_sites, input|
+     # puts "#{input + 1}. #{schoool_sites.name}"
+    #end
+    #puts ""
    
    
    
    
    
-   end
+   #end
    #testing end
    def piano 
      puts "Here the piano school list"
@@ -47,6 +45,7 @@ class PianoMusicSchools::CLI
        when "1"
          #puts "Virtual Keyboard School"  
          puts PianoMusicSchools::Pianists.all[0].name 
+         binding pry 
          puts "-----------------------------------------"
          #PianoMusicSchools::Scraper.final_display_list(input)
          #piano
