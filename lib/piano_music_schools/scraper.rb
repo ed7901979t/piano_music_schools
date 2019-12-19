@@ -9,9 +9,11 @@ class PianoMusicSchools::Scraper
     @list_piano_site_description=@data.css("h3") 
     @list_piano_site_description.each do |rep|
       name=rep.css('a').text.strip
-      school_sites=rep.css("h3").text.strip  
+      school_sites=rep.css("h3").text.strip 
+       
     PianoMusicSchools::Pianists.new(name, school_sites)
     end  
+    binding.pry 
   end
   
   
@@ -21,7 +23,8 @@ class PianoMusicSchools::Scraper
   if (input > 1) && (input < 5) 
      #if ((input == 2) || (input == 3) || (input == 4))
         paragraph=@data.css("p[style='text-align: left;']")[input-2]  
-       
+       #use the input number to access a corresponding element of an all[]
+       #store paragraph to that instances description attribute
      #elsif (input > 4) && (input < 10) 
   elsif (input==5)
     paragraph=@data.css("body > section > div > p:nth-child(20)")#[input-2] 
@@ -69,9 +72,9 @@ class PianoMusicSchools::Scraper
    #   end
       #to display school lists collectin array
       def self.display_list(input)
-    index = input.to_i - 1
-    puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
-  end
+        index = input.to_i - 1
+        puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
+      end
  # def self.final_list_display_school
  #    PianoMusicSchools::Scraper.get_piano_sites 
  #    PianoMusicSchools::Scraper.display_school  

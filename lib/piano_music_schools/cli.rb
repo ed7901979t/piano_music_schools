@@ -35,17 +35,21 @@ class PianoMusicSchools::CLI
      puts "Select school you would like to read more about. Or type exit"
     input = ""
     while input != "exit"
-      input = gets.strip
+       
      #input = "nil" 
      puts "Please enter your input"
-     puts "   "
+     #puts "   "
+     input = gets.strip
+     input=input.to_i
      #input=gets.strip.downcase 
-      
+       
+    #if input > 0 && input < 10  
+     # puts PianoMusicSchools::Pianists.all[input-1]
      case input
        when "1"
          #puts "Virtual Keyboard School"  
          puts PianoMusicSchools::Pianists.all[0].name 
-         binding pry 
+         #binding pry 
          puts "-----------------------------------------"
          #PianoMusicSchools::Scraper.final_display_list(input)
          #piano
