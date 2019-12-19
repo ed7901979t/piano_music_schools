@@ -13,7 +13,7 @@ class PianoMusicSchools::Scraper
        
     PianoMusicSchools::Pianists.new(name, school_sites)
     end  
-    binding.pry 
+    #binding.pry 
   end
   
   
