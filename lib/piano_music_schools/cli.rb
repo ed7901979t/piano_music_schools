@@ -1,50 +1,33 @@
 class PianoMusicSchools::CLI     
    
-  #testing start   
-  attr_accessor :schools 
-  #testing end
-  
-   def call 
-     
+   #calling piano function and welcome message
+def call 
      puts "Welcome to the Piano Music Schools" 
      puts "  "
-      
-     piano   
-     #goodbye
-   end
-   #testing start 
-   #def list
-       
-    #puts ""
-    #@schools = PianoMusicSchools::Scraper.get_piano_sites
-    #PianoMusicSchools::Pianists.all.each_with_index do |schoool_sites, input|
-     # puts "#{input + 1}. #{schoool_sites.name}"
-    #end
-    #puts ""
+     #piano function 
+     piano  
+     #goodbye function
+     goodbye
+end
    
-   
-   
-   
-   
-   #end
-   #testing end
-   def piano 
+   #defining piano function  
+def piano 
      puts "Here the piano school list"
-      
+     #displaying school list 
      PianoMusicSchools::CLI.final_list_display_school 
      puts "Select school you would like to read more about. Or type exit"
-    input = ""
+     input = ""
     while input != "exit"
       input = gets.strip 
-     #input = "nil" 
-     puts "Please enter your input"
-     #puts "   "
-     #input = gets.strip
-     #input=input.to_i
-     #input=gets.strip.downcase 
+      #input = "nil" 
+      puts "Please enter your input"
+      #puts "   "
+      #input = gets.strip
+      #input=input.to_i
+      #input=gets.strip.downcase 
        
-    #if input > 0 && input < 10  
-     # puts PianoMusicSchools::Pianists.all[input-1]
+      #if input > 0 && input < 10  
+      # puts PianoMusicSchools::Pianists.all[input-1]
      case input
        when "1"
          #puts "Virtual Keyboard School"  
@@ -138,38 +121,29 @@ class PianoMusicSchools::CLI
             puts "Not sure what you mean! Please select the description of music school you'd like to read more about, or type exit."
             puts ""
          end
-         puts "Please enter your input"
-         
-      
-         
-        end 
-      end
-      
-       def self.display_school 
-    
-    PianoMusicSchools::Pianists.all.each.with_index(1) do |school, i|
-    
-      puts "   #{i}.   #{school.name}" 
-    end
-      end
-      
-      def self.final_list_display_school
-    PianoMusicSchools::Scraper.get_piano_sites 
-    PianoMusicSchools::CLI.display_school  
-    #Piano::Pianists.display_list 
+            puts "Please enter your input"
+         end 
   end
       
+       #defining display_school
+  def self.display_school 
+          PianoMusicSchools::Pianists.all.each.with_index(1) do |school, i|
+    
+          puts "   #{i}.   #{school.name}" 
+          end
+  end
       
-     
-         
-     #@piano_sites=Piano::Pianists
-    #end
-    #testing
-    def goodbye
-      puts "Goodbye. Thank you for using program."
-    end
-   end   
- #end
-#end
+       #defining final_list_display_school
+       def self.final_list_display_school
+          PianoMusicSchools::Scraper.get_piano_sites 
+          PianoMusicSchools::CLI.display_school  
+       end
+      
+       #defining goodbye function 
+       def goodbye
+          puts "Goodbye. Thank you for using program."
+       end
+  end   
+  
  
      
