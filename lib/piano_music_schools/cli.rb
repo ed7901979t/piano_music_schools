@@ -30,7 +30,7 @@ def piano
       # puts PianoMusicSchools::Pianists.all[input-1]
      case input
        when "1"
-         #puts "Virtual Keyboard School"  
+         puts "Virtual Keyboard School"  
          #puts PianoMusicSchools::Pianists.all[0].name 
          #binding pry 
          puts "-----------------------------------------"
