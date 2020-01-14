@@ -18,19 +18,7 @@ class PianoMusicSchools::Scraper
     end  
     #
   end
-  def self.display_list(input)
-    index = input.to_i - 1
-    puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
-  end
-  
-  #final_display_list
-  def self.final_display_list(input)
-    index = input.to_i - 1
-    puts "#{PianoMusicSchools::Pianists.all[index].description}"   
-
-#    puts PianoMusicSchools::Scraper.get_piano_paragraphs1(input.to_i)  
-  end
-  
+ 
   #data_scraper    
   def self.data_scraper(url)
     Nokogiri::HTML(open(url))  

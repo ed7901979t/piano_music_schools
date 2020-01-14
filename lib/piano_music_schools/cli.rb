@@ -34,7 +34,7 @@ def piano
          #puts PianoMusicSchools::Pianists.all[0].name 
          #binding pry 
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          #puts "-----------------------------------------"
        when "2"
@@ -44,7 +44,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "3"
@@ -54,7 +54,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "4"
@@ -64,7 +64,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "5"
@@ -74,7 +74,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "6"
@@ -84,7 +84,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "7"
@@ -94,7 +94,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "8"
@@ -104,7 +104,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
        when "9"
@@ -114,7 +114,7 @@ def piano
          puts "-----------------------------------------"
          #testing
          puts "-----------------------------------------"
-         PianoMusicSchools::Scraper.final_display_list(input)
+         PianoMusicSchools::CLI.final_display_list(input)
          #piano
          puts "                                         "
          else
@@ -138,6 +138,20 @@ def piano
           PianoMusicSchools::Scraper.get_piano_sites 
           PianoMusicSchools::CLI.display_school  
        end
+  #*****************************************
+       def self.display_list(input)
+    index = input.to_i - 1
+    puts "#{PianoMusicSchools::Pianists.all[index].school_sites}"   
+  end
+  
+  #final_display_list
+  def self.final_display_list(input)
+    index = input.to_i - 1
+    puts "#{PianoMusicSchools::Pianists.all[index].description}"   
+
+#    puts PianoMusicSchools::Scraper.get_piano_paragraphs1(input.to_i)  
+  end
+  #*********************************************
       
        #defining goodbye function 
        def goodbye
